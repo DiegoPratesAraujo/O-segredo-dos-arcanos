@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Livro</title>
+</head>
+<body>
+    <h1>Meu Livro</h1>
+    <div id="book-content"></div>
+
+    <script>
+        // Função para carregar o conteúdo do arquivo
+        function carregarLivro() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    // Se o arquivo for carregado com sucesso, exiba o conteúdo na página
+                    document.getElementById("book-content").innerHTML = this.responseText;
+                }
+            };
+            // Substitua 'nome-do-arquivo.txt' pelo nome do seu arquivo
+            xmlhttp.open( o segredo dos arcanos.txt, true);
+            xmlhttp.send();
+        }
+
+        // Chame a função para carregar o livro quando a página for carregada
+        window.onload = carregarLivro;
+    </script>
+</body>
+</html>
